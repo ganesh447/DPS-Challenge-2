@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 import joblib
 
-df = pd.read_csv('c_cleaned.csv', parse_dates=['DATUM'], index_col='DATUM')
+df = pd.read_csv('datasets/c_cleaned.csv', parse_dates=['DATUM'], index_col='DATUM')
 filtered_df = df[(df['Category'] == 'Alkoholunfälle') & (df['Type'] == 'insgesamt')].copy()
 filtered_df = filtered_df.sort_index()
 ts = filtered_df['Value']
