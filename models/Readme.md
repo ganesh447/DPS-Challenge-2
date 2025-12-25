@@ -33,6 +33,15 @@
 6. Save the fitted model to `sarima_alcohol_model.pkl` using `joblib.dump`.
 7. Produce and display a single-step forecast (Jan 2021 in the current script) with a 95% CI.
 
+## Plots
+
+![Training Data Plot](Training_data.png)
+
+![ACF_PACF Plot](ACF_PACF.png)
+
+![Forecast_in_January_2021](1_step_ahea_forecast.png)
+
+
 ## How to run
 
 ```bash
