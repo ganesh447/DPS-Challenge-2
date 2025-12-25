@@ -22,7 +22,6 @@ Visual summary
 
 ![Predicted vs Actual (2021–2024)](Model_performance.png)
 
-(See `predicted_vs_actual.png`  for the plot.)
 
 ## Files in this directory
 
@@ -31,6 +30,7 @@ Visual summary
 
 ## How to reproduce the evaluation
 - Run Performance_evaluation.py
+- 
 Prerequisites
 - Python 3.8+
 - pip install -r requirements.txt
