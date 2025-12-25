@@ -23,7 +23,6 @@ def predict(request: RequestBody):
     
     target_date = pd.Timestamp(year=request.year, month=request.month, day=1)
     
-    # Hardcoded last training date (Dec 2020 - change if you retrain with more data)
     last_train = pd.Timestamp('2020-12-01')
     
     if target_date <= last_train:
