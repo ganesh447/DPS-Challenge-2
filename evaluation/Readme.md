@@ -20,7 +20,7 @@ Visual summary
   - A 95% confidence interval band around the predictions (shaded area).
   - The plot highlights where the model under- or over-predicts and how uncertainty varies over time.
 
-![Predicted vs Actual (2021–2024)](Model_Performance.png)
+![Predicted vs Actual (2021–2024)](Model_performance.png)
 
 (See `predicted_vs_actual.png`  for the plot.)
 
