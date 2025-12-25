@@ -3,17 +3,14 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-# Load the pre-trained model (ensure 'sarima_alcohol_model.pkl' is in the same directory)
+# Load the model
 model = joblib.load('sarima_alcohol_model.pkl')
 
-app = FastAPI(
-    title="Munich Alcohol-Related Accidents Forecast API",
-    description="SARIMA model predicting monthly 'Alkoholunfälle' (insgesamt)"
-)
+app = FastAPI(title="Munich Alcohol-Related Accidents Forecast API")
 
 class RequestBody(BaseModel):
     year: int
-    month: int  # 1-12
+    month: int
 
 @app.get("/")
 def root():
@@ -25,10 +22,12 @@ def predict(request: RequestBody):
         raise HTTPException(status_code=400, detail="Month must be 1-12")
     
     target_date = pd.Timestamp(year=request.year, month=request.month, day=1)
-    last_train = model.data.endog_dates[-1]  # Last training date from fitted model
     
-    if target_date <= pd.Timestamp(last_train):
-        raise HTTPException(status_code=400, detail="Date must be in the future")
+    # Hardcoded last training date (Dec 2020 - change if you retrain with more data)
+    last_train = pd.Timestamp('2020-12-01')
+    
+    if target_date <= last_train:
+        raise HTTPException(status_code=400, detail=f"Date must be after {last_train.date()}")
     
     # Steps ahead
     steps = (target_date.year - last_train.year) * 12 + (target_date.month - last_train.month)
