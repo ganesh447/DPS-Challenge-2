@@ -10,7 +10,6 @@ Three dataset files used in the project:
 
 ---
 
-## Purpose / high-level flow
 
 1. The raw CSV (`monatszahlen...csv`) is an export that contains monthly statistics for several accident categories (e.g. "Alkoholunfälle", "Fluchtunfälle", "Verkehrsunfälle") and subtypes (e.g. "insgesamt", "mit Personenschäden", "Verletzte und Getötete"). It contains summary rows ("Summe") and monthly rows where months are encoded like `202401` (YYYYMM).
 
