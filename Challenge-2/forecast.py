@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
+import joblib
 
 df = pd.read_csv('c_cleaned.csv', parse_dates=['DATUM'], index_col='DATUM')
 filtered_df = df[(df['Category'] == 'Alkoholunfälle') & (df['Type'] == 'insgesamt')].copy()
@@ -8,6 +9,9 @@ filtered_df = filtered_df.sort_index()
 ts = filtered_df['Value']
 ts = ts.asfreq('MS')
 train = ts.loc[:'2020-12-01']  # (Jan 2000 to Dec 2020)
+
+filtered_df.to_csv('filtered_dataset.csv',index= True)
+train.to_csv('training_dataset.csv',index= True)
 
 print("Training data shape:", train.shape)
 
@@ -36,6 +40,8 @@ model = SARIMAX(train,
                 enforce_invertibility=False)
 
 fitted_model = model.fit(disp=False)  
+joblib.dump(fitted_model, 'sarima_alcohol_model.pkl')
+print("Model trained and saved as 'sarima_alcohol_model.pkl'")
 
 # Model summary 
 print(fitted_model.summary())
