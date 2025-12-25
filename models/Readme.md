@@ -34,12 +34,14 @@
 7. Produce and display a single-step forecast (Jan 2021 in the current script) with a 95% CI.
 
 ## Plots
-
+1. Training Data 
 ![Training Data Plot](Training_data.png)
 
+2. ACF & PACF 
 ![ACF_PACF Plot](ACF_PACF.png)
 
-![Forecast_in_January_2021](1_step_ahea_forecast.png)
+3. Forecast One Step Ahead
+![Forecast_in_January_2021](1_step_ahead_forecast.png)
 
 
 ## How to run
