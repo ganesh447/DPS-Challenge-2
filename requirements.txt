@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+joblib
+statsmodels
+pandas
+matplotlib
+pydantic
+
