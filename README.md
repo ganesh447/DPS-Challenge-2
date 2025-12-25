@@ -5,6 +5,8 @@ Challenge: [Open Data Portal — DPS Challenge](https://dps-challenge-front.netl
 
 This repository contains the code and artifacts used to build a SARIMA model forecasting monthly counts of alcohol-related traffic accidents and supporting EDA / preprocessing notebooks and CSV exports.
 
+After analysing the trends and insights from the data, SARIMA was chosen because the monthly accident series exhibits clear seasonality and trend. It works well with relatively short historical series, is computationally efficient, and gives direct point forecasts.
+
 ---
 
 ## Project structure 
