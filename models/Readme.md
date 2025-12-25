@@ -34,7 +34,7 @@
 7. Produce and display a single-step forecast (Jan 2021 in the current script) with a 95% CI.
 
 ## How to run
-From the repository root (adjust paths as necessary):
+
 ```bash
 python forecast.py
 ```
